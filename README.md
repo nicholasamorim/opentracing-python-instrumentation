@@ -1,8 +1,12 @@
+*NOTE*: This version supports OpenTracing 2.0 and is compatible with Tornado 5 as far as I can tell.
+
+This fork merely merges the work of @acarlosalberto (thanks!)
+
 [![PyPI version][pypi-img]][pypi] [![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov]
 
 # opentracing-python-instrumentation
 
-A collection of instrumentation tools to enable tracing with 
+A collection of instrumentation tools to enable tracing with
 [OpenTracing API](http://opentracing.io).
 
 ## Module
@@ -68,8 +72,8 @@ Server endpoints are instrumented by creating a middleware class that:
  2. wraps incoming request handlers into a method that reads the incoming
     tracing info from the request and creates a new tracing Span
 
-Client call sites are instrumented implicitly by executing a set of 
-available `client_hooks` that monkey-patch some API points in several 
+Client call sites are instrumented implicitly by executing a set of
+available `client_hooks` that monkey-patch some API points in several
 common libraries like `SQLAlchemy`, `urllib2`, Tornado Async HTTP Client.
 The initialization of those hooks is usually also done from the middleware
 class's `__init__` method.
@@ -153,7 +157,7 @@ class TracerMiddleware(object):
     def __init__(self):
         # perform initialization similar to above, including installing
         # the client_hooks
-        
+
     @gen.coroutine
     def __call__(self, request, handler, next_mw):
         request_wrapper = http_server.TornadoRequestWrapper(request=request)
