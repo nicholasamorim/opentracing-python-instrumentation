@@ -1,6 +1,4 @@
-*NOTE*: This version supports OpenTracing 2.0 and is compatible with Tornado 5 as far as I can tell.
-
-This fork merely merges the work of @acarlosalberto (thanks!)
+**NOTE**: This version supports OpenTracing 2.0 and is compatible with Tornado 5 as far as I can tell. This fork merely merges the work of @acarlosalberto (**thanks!**)
 
 [![PyPI version][pypi-img]][pypi] [![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov]
 
